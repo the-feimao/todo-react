@@ -1,23 +1,43 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, Button, StyleSheet, Image } from 'react-native';
 import { useRouter } from 'expo-router';
+
 
 export default function Onboard() {
   const router = useRouter();
 
   return (
-    <View style={styles.container}>
-      <View style={styles.content}>
-        <Text style={styles.title}>Welcome to TodoApp</Text>
-        <Text style={styles.subtitle}>Short onboarding slide 1</Text>
-        {/* For real app use react-native-pager or flatlist */}
-        <Button
+    <View className='flex-1 justify-between p-5 bg-yellow-500 h'>
+       <Text className='text-2xl font-extrabold text-center mt-12 '>Welcome to TodoApp</Text>
+      <View className='flex-1 items-center justify-center'>
+
+        <View className='items-center justify-center mb-48 px-4'>
+            <Image
+          source={require('../../assets/images/planning-list.png')}
+          className="w-[300px] h-[300px] px-4 mb-6"
+          resizeMode="contain"
+      
+          
+        />
+           <Text>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse, labore. Et porro, illum officiis excepturi quo dolorem atque, culpa architecto, iure eos laboriosam. Nam modi, fuga necessitatibus aliquid praesentium quaerat.
+        </Text>
+        </View>
+     
+       
+      
+      
+        <View className='mb-24'>
+          <Button
           title="Get started"
           onPress={() => router.replace('/(onboard)/screen1')}
+        
         />
+        </View>
+        
       </View>
 
-      <View style={styles.footer}>
+      <View >
         <Button
           title="Skip"
           color="#999"
@@ -28,30 +48,4 @@ export default function Onboard() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    justifyContent: 'space-between',
-  },
-  content: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 24,
-    marginBottom: 12,
-    fontWeight: 'bold',
-  },
-  subtitle: {
-    textAlign: 'center',
-    marginBottom: 20,
-    fontSize: 16,
-    color: '#555',
-  },
-  footer: {
-    marginBottom: 20,
-    alignItems: 'center',
-  },
-});
+
