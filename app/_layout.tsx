@@ -7,7 +7,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 export default function RootLayout() {
   return (
     <AuthProvider>
-      <SafeAreaProvider style={{ flex: 1,paddingTop:50 }}>
+      <SafeAreaProvider style={{ flex: 1 }}>
       <Slot />
       </SafeAreaProvider>
     </AuthProvider>

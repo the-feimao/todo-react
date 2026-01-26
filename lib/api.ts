@@ -2,7 +2,8 @@ import axios from 'axios';
 import { getToken } from './storage';
 
 const api = axios.create({
-  baseURL: 'http://10.0.2.2:8000/api', // change to your dev host accessible to device
+  baseURL: 'http://192.168.0.6:8000/api', 
+    // baseURL: 'http://10.0.2.2:8000/api',// change to your dev host accessible to device
   timeout: 10000,
   headers: {
     Accept: "application/json",
